@@ -1,12 +1,11 @@
-package com.br.pdvpostodecombustivel;
+package com.br.pdvpostodecombustivel.enums;
 
-import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
 public class PdvpostodecombustivelApplication {
 
-    public static void main(String[] args) {
+    public static <Pessoa> void main(String[] args) {
 
         //SpringApplication.run(PdvpostodecombustivelApplication.class, args);
 

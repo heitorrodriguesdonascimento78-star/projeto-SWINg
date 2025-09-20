@@ -9,7 +9,7 @@ public class PessoaDTo {
             String cpfCnpj,
             long numeroCtps,
             @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
-            localDate dataNascimento)
+            localDate dataNascimento()
     public record PessoaResponde(
             long id,
             String nomeCompleto,
