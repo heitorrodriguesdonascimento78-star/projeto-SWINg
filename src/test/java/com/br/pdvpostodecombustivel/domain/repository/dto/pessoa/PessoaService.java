@@ -12,7 +12,7 @@ import org.springframework.transaction.annotation.Transactional;
 @Transactional
 public class PessoaService {
 
-    private final PessoaRepository repository;
+    private final com.br.pdvpostodecombustivel.domain.repository.dto.pessoa.PessoaRepository repository;
 
     public PessoaService(PessoaRepository repository) {
         this.repository = repository;
@@ -21,8 +21,8 @@ public class PessoaService {
     // CREATE
     public PessoaResponse create(PessoaRequest req) {
         validarUnicidadeCpfCnpj(req.cpfCnpj(), null);
-        Pessoa nova = toEntity(req);
-        return toResponse(repository.save(nova));
+        Pessoa novaPessoa = toEntity(req);
+        return toResponse(repository.save(novaPessoa));
     }
 
     // READ by ID
@@ -106,6 +106,7 @@ public class PessoaService {
                 req.cpfCnpj(),
                 req.numeroCtps(),
                 req.dataNascimento()
+                req.tipoPessoa()
         );
     }
 

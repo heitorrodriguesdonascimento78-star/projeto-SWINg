@@ -5,6 +5,7 @@ public enum TipoPessoa {
     JURIDICA("Pessoa juritica")
 
         private final String descricao;
+
     private TipoPessoa(String descricao){
         this.descricao = descricao;{
         }

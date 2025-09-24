@@ -1,4 +1,4 @@
-package domain.entity;
+package com.br.pdvpostodecombustivel.domain.repository.dto.pessoa.entity;
 import org.springframework.format.annotation.DateTimeFormat;
 import  java.time.localDate;
 public class PessoaDTo {

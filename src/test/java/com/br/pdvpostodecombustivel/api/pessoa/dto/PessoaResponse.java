@@ -1,7 +1,9 @@
-package com.br.pdvpostodecombustivel.domain.repository.dto.pessoa;
+package com.br.pdvpostodecombustivel.api.pessoa.dto;
 
-import com.br.pdvpostodecombustivel.domain.entity.Pessoa;
-
-public record PessoaResponse() {
-    long id
-}
+public record PessoaResponse(
+        long id,
+        Long numeroCtps
+        String nomeCompleto,
+        String cpfCnpj
+        )
+{}
