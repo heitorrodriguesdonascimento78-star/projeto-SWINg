@@ -1,9 +1,11 @@
 package com.br.pdvpostodecombustivel.api.pessoa.dto;
 
+import java.time.LocalDate;
+
+// Para resposta
 public record PessoaResponse(
-        long id,
-        Long numeroCtps
         String nomeCompleto,
-        String cpfCnpj
-        )
-{}
+        String cpfCnpj,
+        Long numeroCtps,
+        LocalDate dataNascimento
+){}

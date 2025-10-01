@@ -3,6 +3,7 @@ package com.br.pdvpostocombustivel.api.pessoa;
 
 import com.br.pdvpostocombustivel.api.pessoa.dto.PessoaRequest;
 import com.br.pdvpostocombustivel.api.pessoa.dto.PessoaResponse;
+import com.br.pdvpostodecombustivel.domain.repository.dto.pessoa.PessoaService;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Sort;
 import org.springframework.http.HttpStatus;
@@ -20,7 +21,7 @@ public class PessoaController {
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public PessoaResponse create(@RequestBody PessoaRequest req) {
+    public PessoaResponse create(@RequestBody com.br.pdvpostocombustivel.api.pessoa.PessoaRequest req) {
         return service.create(req);
     }
 
