@@ -1,4 +1,4 @@
-package com.br.pdvpostodecombustivel.enums;
+package com.br.pdvpostocombustivel.pdvpostodecombustivel.enums;
 
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 

@@ -1,4 +1,4 @@
-package com.br.pdvpostodecombustivel.domain.repository.dto.pessoa;
+package com.br.pdvpostocombustivel.pdvpostodecombustivel.domain.repository.dto.pessoa;
 import com.br.pdvpostocombustivel.api.pessoa.dto.PessoaRequest;
 import com.br.pdvpostocombustivel.api.pessoa.dto.PessoaResponse;
 import com.br.pdvpostocombustivel.domain.entity.Pessoa;
@@ -20,7 +20,6 @@ public class PessoaService {
 
     // CREATE
     public PessoaResponse create(PessoaRequest req) {
-        validarUnicidadeCpfCnpj(req.cpfCnpj(), null);
         Pessoa novaPessoa = toEntity(req);
         return toResponse(repository.save(novaPessoa));
     }

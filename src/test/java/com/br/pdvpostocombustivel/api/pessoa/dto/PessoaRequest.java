@@ -1,6 +1,6 @@
-package com.br.pdvpostodecombustivel.domain.repository.dto.pessoa;
+package com.br.pdvpostocombustivel.pdvpostodecombustivel.domain.repository.dto.pessoa;
 
-import com.br.pdvpostocombustivel.enums.TipoPessoa;
+import com.br.pdvpostocombustivel.pdvpostodecombustivel.enums.TipoPessoa;
 import org.springframework.format.annotation.DateTimeFormat;
 import java.time.LocalDate;
 
