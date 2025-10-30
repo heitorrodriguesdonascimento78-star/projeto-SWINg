@@ -1,20 +1,37 @@
-package com.br.pdvpostocombustivel.pdvpostodecombustivel.enums;
-
+package com.br.pdvpostocombustivel;
+import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+// OpenAPI / Swagger
+import io.swagger.v3.oas.annotations.OpenAPIdefinition;
+import io.swagger.v3.oas.annotations.info.Contact;
+import io.swagger.v3.oas.annotations.info.Info;
+import io.swagger.v3.oas.annotations.info.License;
+import io.swagger.v3.oas.annotations.servers.Server;
+import org.springframework.stereotype.Service;
 
 @SpringBootApplication
+@OpenAPIDefinition(
+        info = @Info(
+                title = "PDV Posto Combustível API",
+                version = "v1",
+                description = "API de exemplo com CRUD de Pessoas (Spring Boot 3 / java 17).",
+                contact = @Contact(name = "", email = ""),
+                license = @License(name = "MIT")
+        ),
+        servers = {@Service(url = "http://localhost:8080",description = "Ambiente local")}
+)
 public class PdvpostodecombustivelApplication {
 
     public static <Pessoa> void main(String[] args) {
 
-        //SpringApplication.run(PdvpostodecombustivelApplication.class, args);
+        SpringApplication.run(PdvpostodecombustivelApplication.class, args);
 
 
-        Pessoa pessoal = new Pessoa();
-        pessoal.setApelido("Rud");
-        pessoal.setId(1);
-        pessoal.setIdade(19);
-        pessoal.setNome("Rudson Porfirio");
+        Pessoa Pessoa = new Pessoa();
+        Pessoa.setApelido("Rud");
+        Pessoa.setId(1);
+        Pessoa.setIdade(19);
+        Pessoa.setNome("Rudson Porfirio");
         rp.salvaPessoa(pessoal);
 
         Pessoa pessoa2 = new Pessoa();

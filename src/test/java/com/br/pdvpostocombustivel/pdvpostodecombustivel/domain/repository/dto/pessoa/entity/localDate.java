@@ -1,5 +1,5 @@
-package com.br.pdvpostodecombustivel.domain.repository.dto.pessoa.entity;
-import java.time.LocalDate;
+package com.br.pdvpostocombustivel.pdvpostodecombustivel.domain.repository.dto.pessoa.entity;
+
 public class localDate {
     localDate hoje = localDate.now();
 

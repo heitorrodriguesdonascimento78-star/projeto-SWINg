@@ -1,4 +1,4 @@
-package com.br.pdvpostodecombustivel;
+package com.br.pdvpostocombustivel.pdvpostodecombustivel;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

@@ -1,4 +1,4 @@
-package com.br.pdvpostodecombustivel.api.comtato.dito;
+package com.br.pdvpostocombustivel.pdvpostodecombustivel.api.comtato.dito;
 
 public record ContatoRequest() {
     static String telefone,

@@ -1,4 +1,4 @@
-package com.br.pdvpostodecombustivel.domain.repository.dto.pessoa.entity;
+package com.br.pdvpostocombustivel.pdvpostodecombustivel.domain.repository.dto.pessoa.entity;
 
 public class Produto {
 }
