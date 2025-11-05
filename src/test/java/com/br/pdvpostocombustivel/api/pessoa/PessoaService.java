@@ -19,14 +19,14 @@ public class PessoaService {
     }
 
     // CREATE
-    public PessoaResponse.PessoaResponse create(PessoaRequest req){
+    public PessoaResponse create(PessoaResponse req){
         Pessoa novaPessoa = toEntity(req);
         return toResponse(repository.save(novaPessoa));
     }
 
     // READ by ID
     @Transactional(readOnly = true)
-    public PessoaResponse.PessoaResponse getById(Long id) {
+    public PessoaResponse getById(Long id) {
         Pessoa p = repository.findById(id)
                 .orElseThrow(() -> new IllegalArgumentException("Pessoa não encontrada. id=" + id));
         return toResponse(p);
@@ -34,7 +34,7 @@ public class PessoaService {
 
     // READ by CPF/CNPJ
     @Transactional(readOnly = true)
-    public PessoaResponse.PessoaResponse getByCpfCnpj(String cpfCnpj) {
+    public PessoaResponse getByCpfCnpj(String cpfCnpj) {
         Pessoa p = repository.findByCpfCnpj(cpfCnpj)
                 .orElseThrow(() -> new IllegalArgumentException("Pessoa não encontrada. cpfCnpj=" + cpfCnpj));
         return toResponse(p);
@@ -42,13 +42,13 @@ public class PessoaService {
 
     // LIST paginado
     @Transactional(readOnly = true)
-    public Page<PessoaResponse.PessoaResponse> list(int page, int size, String sortBy, Sort.Direction direction) {
+    public Page<PessoaResponse> list(int page, int size, String sortBy, Sort.Direction direction) {
         Pageable pageable = PageRequest.of(page, size, Sort.by(direction, sortBy));
         return repository.findAll(pageable).map(this::toResponse);
     }
 
     // UPDATE (PUT) - substitui todos os campos
-    public PessoaResponse.PessoaResponse update(Long id, PessoaRequest req) {
+    public PessoaResponse update(Long id, PessoaRequest req) {
         Pessoa p = repository.findById(id)
                 .orElseThrow(() -> new IllegalArgumentException("Pessoa não encontrada. id=" + id));
 
@@ -65,7 +65,7 @@ public class PessoaService {
     }
 
     // PATCH - atualiza apenas campos não nulos
-    public PessoaResponse.PessoaResponse patch(Long id, PessoaRequest req) {
+    public PessoaResponse patch(Long id, PessoaRequest req) {
         Pessoa p = repository.findById(id)
                 .orElseThrow(() -> new IllegalArgumentException("Pessoa não encontrada. id=" + id));
         if (req.cpfCnpj() != null && !req.cpfCnpj().equals(p.getCpfCnpj())) {
@@ -78,7 +78,9 @@ public class PessoaService {
 
         return toResponse(repository.save(p));
     }
-
+public PessoaResponse patch(long id, PessoaRequest req){
+        Pessoa p = repository.findById(id)
+                .orElseThrow(() -> new IllegalArgumentException("Pessoa não encrotrada. id=" + id));
 
         if (req.nomeCompleto() != null)  p.setNomeCompleto(req.nomeCompleto());
         if (req.cpfCnpj() != null) {
@@ -110,19 +112,18 @@ public class PessoaService {
         });
     }
 
-    private Pessoa toEntity(PessoaRequest req) {
+    private Pessoa toEntity(PessoaResponse req) {
         return new Pessoa(
                 req.nomeCompleto(),
                 req.cpfCnpj(),
                 req.numeroCtps(),
-                req.dataNascimento()
+                req.dataNascimento(),
                 req.tipoPessoa()
         );
     }
 
-    private com.br.pdvpostocombustivel.api.pessoa.dto.PessoaResponse.PessoaResponse toResponse(Pessoa p) {
-        return new PessoaResponse.PessoaResponse(
-                p.getId(),
+    private PessoaResponse toResponse(Pessoa p) {
+        return new PessoaResponse(
                 p.getNomeCompleto(),
                 p.getCpfCnpj(),
                 p.getNumeroCtps(),

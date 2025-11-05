@@ -11,8 +11,12 @@ import java.time.LocalDate;
             String cpfCnpj,
             Long numeroCtps,
             @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
-            LocalDate dataNascimento, TipoPessoa TipoPessoa)
+            LocalDate dataNascimento)
             {
-                public static record PessoaResponse(String nomeCompleto, String cpfCnpj, Long numeroCtps, LocalDate dataNascimento){}
+                public TipoPessoa  tipoPessoa() {
+                    return null;
+                }
+
+                public static record Pessoa(String nomeCompleto, String cpfCnpj, Long numeroCtps, LocalDate dataNascimento){}
             }
 

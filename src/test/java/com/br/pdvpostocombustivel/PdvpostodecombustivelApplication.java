@@ -15,17 +15,17 @@ import org.springframework.stereotype.Service;
                 title = "PDV Posto Combustível API",
                 version = "v1",
                 description = "API de exemplo com CRUD de Pessoas (Spring Boot 3 / java 17).",
-                contact = @Contact(name = "", email = ""),
+                contact = @Contact(name = "Heitor Rodrigues", email = ""),
                 license = @License(name = "MIT")
         ),
-        servers = {@Service(url = "http://localhost:8080",description = "Ambiente local")}
-)
+        servers = {@Service(url base = "http://localhost:8080/swagger-ui.html", description = "Ambiente local")
+        }
+        )
 public class PdvpostodecombustivelApplication {
 
     public static <Pessoa> void main(String[] args) {
 
         SpringApplication.run(PdvpostodecombustivelApplication.class, args);
-
 
         Pessoa Pessoa = new Pessoa();
         Pessoa.setApelido("Rud");
