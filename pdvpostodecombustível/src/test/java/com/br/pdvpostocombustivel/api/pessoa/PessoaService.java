@@ -42,13 +42,13 @@ public class PessoaService {
 
     // LIST paginado
     @Transactional(readOnly = true)
-    public Page<PessoaResponse> list(int page, int size, String sortBy, Sort.Direction direction) {
+    public Page<com.br.pdvpostocombustivel.api.pessoa.dto.PessoaResponse> list(int page, int size, String sortBy, Sort.Direction direction) {
         Pageable pageable = PageRequest.of(page, size, Sort.by(direction, sortBy));
         return repository.findAll(pageable).map(this::toResponse);
     }
 
     // UPDATE (PUT) - substitui todos os campos
-    public PessoaResponse update(Long id, PessoaRequest req) {
+    public com.br.pdvpostocombustivel.api.pessoa.dto.PessoaResponse update(Long id, PessoaRequest req) {
         Pessoa p = repository.findById(id)
                 .orElseThrow(() -> new IllegalArgumentException("Pessoa não encontrada. id=" + id));
 

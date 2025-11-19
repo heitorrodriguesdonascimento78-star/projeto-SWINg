@@ -132,7 +132,9 @@ public class ClienteService {
         if (req.email() != null) c.setEmail(req.email());
         if (req.telefone() != null) c.setTelefone(req.telefone());
         if (req.dataNascimento() != null) c.setDataNascimento(req.dataNascimento());
-        if (req.tipoPessoa() != null) c.setTipoPessoa(req.tipoPessoa());
+        if (req.tipoPessoa() != null) {
+            c.setTipoPessoa(req.tipoPessoa());
+        }
         if (req.limiteCredito() != null) c.setLimiteCredito(req.limiteCredito());
 
         return c;
@@ -161,3 +163,4 @@ public class ClienteService {
                 m.getDescricao()
         );
     }
+}

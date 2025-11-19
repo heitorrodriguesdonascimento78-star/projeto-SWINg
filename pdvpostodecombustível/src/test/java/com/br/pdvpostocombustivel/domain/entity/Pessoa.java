@@ -1,10 +1,12 @@
 package com.br.pdvpostocombustivel.domain.entity;
 
+import com.br.pdvpostocombustivel.enums.TipoPessoa;
 import com.br.pdvpostocombustivel.pdvpostodecombustivel.enums.TipoPessoa;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
+
 import java.time.LocalDate;
 
 @Entity
@@ -78,4 +80,13 @@ public class Pessoa {
 
     public TipoPessoa getTipoPessoa() { return tipoPessoa; }
     public void setTipoPessoa(TipoPessoa tipoPessoa) { this.tipoPessoa = tipoPessoa; }
+
+    public void setTipoPessoa(TipoPessoa tipoPessoa) {
+    }
+    public String Telefone(){
+        return "";
+    }
+    public void setTelefone(String telefone) {
+
+    }
 }

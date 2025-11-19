@@ -1,0 +1,49 @@
+package com.br.pdvpostocombustivel.domain.entity;
+
+import jakarta.persistence.*;
+import jakarta.validation.constraints.Email;
+
+import java.io.Serial;
+import java.util.HashSet;
+import java.util.Set;
+
+@Entity
+@Table(name = "tb_funcionario")
+@PrimaryKeyJoinColumn(name = "id")
+public class Funcionario extends Pessoa {
+
+    @Serial
+    private static final long serialVersionUID = 1L;
+
+    @Column(nullable = false)
+    private String senha;
+
+    @ManyToMany(fetch = FetchType.EAGER)
+    @JoinTable(name = "tb_funcionario_acesso",
+            joinColumns = @JoinColumn(name = "funcionario_id"),
+            inverseJoinColumns = @JoinColumn(name = "acesso_id"))
+    private Set<Acesso> acessos = new HashSet<>();
+
+    public Funcionario() {
+    }
+
+    // Getters e Setters
+    public String getSenha() {
+        return senha;
+    }
+
+    public void setSenha(String senha) {
+        this.senha = senha;
+    }
+
+    public Set<Acesso> getAcessos() {
+        return acessos;
+    }
+
+    public void setAcessos(Set<Acesso> acessos) {
+        this.acessos = acessos;
+    }
+
+    public void setEmail(String mail) {
+        this.setEmail(mail); }
+}

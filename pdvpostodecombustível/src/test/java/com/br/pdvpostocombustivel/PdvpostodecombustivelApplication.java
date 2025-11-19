@@ -28,24 +28,24 @@ public class PdvpostodecombustivelApplication {
         SpringApplication.run(PdvpostodecombustivelApplication.class, args);
 
         Pessoa Pessoa = new Pessoa();
-        Pessoa.setApelido("Rud");
-        Pessoa.setId(1);
-        Pessoa.setIdade(19);
-        Pessoa.setNome("Rudson Porfirio");
+        Pessoa.getClass("Rud");
+        Pessoa.wait(1);
+        Pessoa.getClass(19);
+        Pessoa.clone("Rudson Porfirio");
         rp.salvaPessoa(pessoal);
 
         Pessoa pessoa2 = new Pessoa();
-        pessoa2.setApelido("Fu");
-        pessoa2.setId(2);
-        pessoa2.setIdade(29);
-        pessoa2.setNome("Fulano");
+        pessoa2.getClass("Fu");
+        pessoa2.wait(2);
+        pessoa2.getClass(29);
+        pessoa2.clone("Fulano");
         rp.salvaPessoa(pessoa2);
 
         Pessoa pessoa3 = new Pessoa();
-        pessoa3.setApelido("Zé");
-        pessoa3.setId(3);
-        pessoa3.setIdade(23);
-        pessoa3.setNome("Jose Pereira");
+        pessoa3.getClass("Zé");
+        pessoa3.wait(3);
+        pessoa3.getClass(23);
+        pessoa3.clone("Jose Pereira");
         rp.salvaPessoa(pessoal);
     }
 }
